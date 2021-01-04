@@ -1,0 +1,30 @@
+{
+  "name": "Autoupdate",
+  "version": "3.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.1.0",
+    "electron-builder": "^22.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anirudhtrehan/CICD.git"
+  },
+  "github": {
+    "release": true
+  },
+  "dependencies": {
+    "release-it": "^14.2.2"
+  }
+}

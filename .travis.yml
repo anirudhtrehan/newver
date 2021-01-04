@@ -1,0 +1,25 @@
+dist: bionic
+language: node_js
+node_js:
+  - 12
+sudo: true
+install: true
+addons:
+  apt:
+    update: true
+cache: # cache npm dependencies to avoid wasting time
+  directories:
+    - $HOME/node_modules
+
+install:
+  - export TRAVIS_COMMIT_DESCRIPTION=`git log -n 1`
+
+script:
+  - git config --global user.email $GITHUB_EMAIL
+  - git config --global user.name $GITHUB_USERNAME
+  - git remote rm origin 
+  - git remote add origin https://60e5e2a0ad900f86495d28939ab0ebf4715dd8df@github.com/anirudhtrehan/newver.git
+  - git symbolic-ref HEAD refs/heads/master
+  - npm install
+  - if [[ "$TRAVIS_COMMIT_DESCRIPTION" != *"Release v"* ]];then npm run release --minor --ci; fi 
+  # don't release if the last message matches `Release v*` pattern

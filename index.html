@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Electron Update</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            background-color: bisque;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Auto Update Example</h1>
+    <p id="version">Version </p>
+    <div id="notification" class="hidden">
+        <p id="message"></p>
+        <button id="close-button" onClick="closeNotification()">
+          Close
+        </button>
+        <button id="restart-button" onClick="restartApp()" class="hidden">
+          Restart
+        </button>
+      </div>
+    <script type="text/javascript" src="index.js">
+</script>
+</body>
